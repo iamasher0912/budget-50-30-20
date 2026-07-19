@@ -8,20 +8,6 @@ const config: CapacitorConfig = {
     allowMixedContent: false,
     backgroundColor: '#13161f',
   },
-  plugins: {
-    SplashScreen: {
-      launchShowDuration: 1200,
-      launchAutoHide: true,
-      backgroundColor: '#13161f',
-      androidScaleType: 'CENTER_CROP',
-      showSpinner: false,
-      splashFullScreen: true,
-      splashImmersive: false,
-    },
-    Preferences: {
-      group: 'FinlyStorage',
-    },
-  },
 };
 
 export default config;
