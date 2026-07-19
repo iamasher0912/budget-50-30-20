@@ -15,8 +15,7 @@ import { monthLabel, currentMonthKey } from './lib/format';
 type View = 'dashboard' | 'budget' | 'history' | 'settings';
 
 export default function App() {
-  return <h1 style={{color:'black'}}>Finly funciona</h1>;
-
+  console.log("FINLY APP INICIANDO");
   const store = useFinanceStore();
   const summary = useFinanceStats(store.transactions, store.settings);
   const [view, setView] = useState<View>('dashboard');
