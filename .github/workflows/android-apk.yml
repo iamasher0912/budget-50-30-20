@@ -30,6 +30,12 @@ jobs:
         with:
           packages: 'platforms;android-36 build-tools;36.0.0'
 
+      - name: Install Gradle
+        run: |
+          wget -q https://services.gradle.org/distributions/gradle-8.14.3-bin.zip
+          unzip -q gradle-8.14.3-bin.zip -d /opt
+          echo "/opt/gradle-8.14.3/bin" >> $GITHUB_PATH
+
       - name: Install dependencies
         run: npm install
 
@@ -39,10 +45,14 @@ jobs:
       - name: Sync Capacitor Android
         run: npx cap sync android
 
+      - name: Generate Gradle wrapper
+        working-directory: android
+        run: gradle wrapper --gradle-version 8.14.3 --distribution-type all
+
       - name: Make Gradle wrapper executable
         working-directory: android
         run: chmod +x gradlew
-        
+
       - name: Build debug APK
         working-directory: android
         run: ./gradlew assembleDebug --no-daemon
