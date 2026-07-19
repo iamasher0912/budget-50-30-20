@@ -6,9 +6,5 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: 'dist',
-    chunkSizeWarningLimit: 900,
-  },
-  optimizeDeps: {
-    exclude: ['lucide-react'],
   },
 });
