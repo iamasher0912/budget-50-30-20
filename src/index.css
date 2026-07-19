@@ -1,110 +1,22 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-  :root {
-    color-scheme: light;
-  }
-
-  html {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-  }
-
-  body {
-    @apply bg-ink-50 text-ink-900 font-sans antialiased;
-    font-feature-settings: 'cv11', 'ss01';
-  }
-
-  ::selection {
-    @apply bg-brand-200 text-ink-900;
-  }
-
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(99, 110, 137, 0.3) transparent;
-  }
-  *::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-  *::-webkit-scrollbar-thumb {
-    background-color: rgba(99, 110, 137, 0.25);
-    border-radius: 9999px;
-  }
-  *::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(99, 110, 137, 0.4);
-  }
+:root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@layer components {
-  .card {
-    @apply rounded-2xl bg-white shadow-card border border-ink-100/70;
-  }
-
-  .card-hover {
-    @apply transition-all duration-300 hover:shadow-card-lg hover:-translate-y-0.5;
-  }
-
-  .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold
-      transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
-      focus-visible:ring-brand-400 disabled:opacity-50 disabled:pointer-events-none select-none;
-  }
-  .btn-primary {
-    @apply btn bg-ink-900 text-white hover:bg-ink-800 active:scale-[0.98] shadow-sm;
-  }
-  .btn-brand {
-    @apply btn bg-brand-500 text-white hover:bg-brand-600 active:scale-[0.98] shadow-sm;
-  }
-  .btn-ghost {
-    @apply btn bg-transparent text-ink-600 hover:bg-ink-100 hover:text-ink-900;
-  }
-  .btn-outline {
-    @apply btn bg-white text-ink-800 border border-ink-200 hover:border-ink-300 hover:bg-ink-50;
-  }
-
-  .input {
-    @apply w-full rounded-xl border border-ink-200 bg-white px-3.5 py-2.5 text-sm text-ink-900
-      placeholder:text-ink-400 transition-all duration-200
-      focus:border-ink-400 focus:outline-none focus:ring-4 focus:ring-ink-100;
-  }
-  .label {
-    @apply block text-xs font-semibold uppercase tracking-wide text-ink-500 mb-1.5;
-  }
-
-  .pill {
-    @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold;
-  }
-
-  .skeleton {
-    @apply relative overflow-hidden bg-ink-100/70 rounded-md;
-  }
-  .skeleton::after {
-    content: '';
-    @apply absolute inset-0;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.55),
-      transparent
-    );
-    background-size: 200% 100%;
-    animation: shimmer 1.6s linear infinite;
-  }
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
+body {
+  background-color: #13161f;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
