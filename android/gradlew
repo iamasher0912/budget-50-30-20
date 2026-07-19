@@ -34,8 +34,8 @@
 #       Busybox and similar reduced shells will NOT work, because this script
 #       requires all of these POSIX shell features:
 #         * functions;
-#         * expansions «$var», «${var}», «${var:-default}», «${var+SET}»,
-#           «${var#prefix}», «${var%suffix}», and «$( cmd )»;
+#         * expansions «$var», «${var}", «${var:-default}", «${var+SET}",
+#           «${var#prefix}", «${var%suffix}", and «$( cmd )»;
 #         * compound commands having a testable exit status, especially «case»;
 #         * various built-in commands including «command», «set», and «ulimit».
 #
@@ -224,11 +224,11 @@ fi
 
 # Use "xargs" to parse quoted args.
 #
-# With -n1 it outputs one arg per line, with the quotes and backslashes removed.
+# With -N1 it outputs one arg per line, with the quotes and backslashes removed.
 #
 # In Bash we could simply go:
 #
-#   readarray ARGS < <( xargs -n1 <<<"$var" ) &&
+#   readarray ARGS < <( xargs -N1 <<<"$var" ) &&
 #   set -- "${ARGS[@]}" "$@"
 #
 # but POSIX shell has neither arrays nor command substitution, so instead we
@@ -243,7 +243,7 @@ fi
 
 eval "set -- $(
         printf '%s\n' "$DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS" |
-        xargs -n1 |
+        xargs -N1 |
         sed ' s~[^-[:alnum:]+,./:=@_]~\\&~g; ' |
         tr '\n' ' '
     )" '"$@"'
